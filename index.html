@@ -21,8 +21,8 @@
 
       <!--filter-->
       <div>
-        <input type="text">
-        <button>Search</button>
+        <input v-model="userInput" type="text">
+        <button @click="searchMovie()">Search</button>
       </div>
       <!--filter-->
 
@@ -39,6 +39,15 @@
           <div class="vote">vote: <span class="answers">{{ film.vote_average }}</span> </div>
         </div>
         <!--film-->
+
+         <!--series-->
+         <div v-for="series in seriesArray" class="films">  
+          <div class="title">Titolo: <span class="answers">{{ series.name }}</span>  </div>
+          <div class="original-title">Titolo originale: <span class="answers">{{ series.original_name }}</span> </div>
+          <div class="lang">Language: <span class="answers">{{ series.original_language }}</span> </div>
+          <div class="vote">vote: <span class="answers">{{ series.vote_average }}</span> </div>
+        </div>
+        <!--series-->
       </div>
 
     </main>
