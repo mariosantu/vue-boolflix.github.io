@@ -1,0 +1,60 @@
+/*  RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+img {
+    width: 100%;
+  }
+
+body {
+  background-color: black;
+  font-family: 'Roboto', sans-serif;
+}
+  
+header {
+  background-color: rgb(36, 36, 36);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: xx-large;
+  color: red;
+}
+
+.films-container {
+  padding: 60px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.films {
+  width: calc( ( 100% / 6 ) - 80px );
+  background-color: rgb(36, 36, 36);
+  padding: 20px;
+  margin: 0 20px;
+  margin-bottom: 20px;
+}
+
+.lang,
+.vote,
+.title,
+.original-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.answers {
+  color: gray;
+ font-size: 20px;
+ font-weight: lighter;
+}
