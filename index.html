@@ -37,7 +37,11 @@
         <div v-for="film in filmsArray" class="films">  
           <div class="title">Titolo: <span class="answers">{{ film.title }}</span>  </div>
           <div class="original-title">Titolo originale: <span class="answers">{{ film.original_title }}</span> </div>
-          <div class="lang">Language: <span class="answers">{{ film.original_language }}</span> </div>
+          <div class="lang">Language: 
+            <span class="answers">
+              <img class="lang-img" :src="`${flagCheck(film.original_language)}`" alt="flag">
+            </span> 
+          </div>
           <div class="vote">vote: <span class="answers">{{ film.vote_average }}</span> </div>
         </div>
         <!--film-->
@@ -50,7 +54,11 @@
          <div v-for="series in seriesArray" class="films">  
           <div class="title">Titolo: <span class="answers">{{ series.name }}</span>  </div>
           <div class="original-title">Titolo originale: <span class="answers">{{ series.original_name }}</span> </div>
-          <div class="lang">Language: <span class="answers">{{ series.original_language }}</span> </div>
+          <div class="lang">Language: 
+            <span class="answers">
+              <img class="lang-img" :src="`${flagCheck(series.original_language)}`" alt="flag">
+            </span> 
+          </div>
           <div class="vote">vote: <span class="answers">{{ series.vote_average }}</span> </div>
         </div>
         <!--series -->
