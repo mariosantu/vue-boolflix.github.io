@@ -54,10 +54,71 @@ var app = new Vue({
 				return "img/default.png";
 			}
 		},
+		// la funzione mi permette di ritornare
+		// il link completo per ottenere 
+		// la copertina dei film/series
 		getCover(posterPath) {
-			return this.pathCoverImg + posterPath;
-		}
 
+			if( posterPath == null) {
+				return "img/default.png";
+			} else {
+				return this.pathCoverImg + posterPath;
+			}	
+		},
+		// la funzione mi permette di trasmormare 
+		// i voti da 1 a 10 in voti da 1 a 5
+		// e restituisce i tag icons stars
+		voteToStar(vote) {
+
+			// resultYellowStar contiene il voto medio
+			// arrotondato per eccesso del
+			// film/serie corrente
+			let resultYellowStar;
+
+			// noRateStar contiene l'eventuale mancanza
+			// di voto del film/serie corrente
+			let noRateStar;
+
+			// conterrà le 5 stelle con i rispettivi colori 
+			var starsIcon = ``;
+			
+			// effettuo l'arrotondamento per eccesso
+			// con la funzione Math.ceil 
+			resultYellowStar = Math.ceil(vote / 2);
+
+			// assegno a noRateStar l'eventuale numero 
+			// di stelle da non colorare di giallo 
+			// esempio: 
+			// se il film ha 4 stelle su 5 resultYellowStar 
+			// conterrà 4, mentre noRateStar conterrà 1
+			noRateStar = 5 - resultYellowStar;
+
+			// il for itera resultYellowStar e assegna 
+			// a starsIcon l'icona gialla da inserire 
+			// nell'html
+			for(let i = 0; i < resultYellowStar; i++) {
+				starsIcon += 
+				`
+				<i class="fas fa-star" style="color: yellow"></i>
+				`
+			}
+
+			// il for itera noRateStar e assegna 
+			// a starsIcon l'icona bianca da inserire 
+			// nell'html
+			for(let i = 0; i < noRateStar; i++) {
+				starsIcon += 
+				`
+				<i class="fas fa-star" style="color: white"></i>
+				`
+			}
+
+			// ritorno la quantità di stelle gialle e bianche
+			// che dovranno essere stampate tramite
+			// il richiamo della funzione a riga 59 tramite v-html 
+			// (file html)
+			return starsIcon;
+		}
 	},
 	mounted() {
         // mostra di default i film più popolari

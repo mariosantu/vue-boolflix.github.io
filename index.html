@@ -55,7 +55,9 @@
                   <img class="lang-img" :src="`${flagCheck(film.original_language)}`" alt="flag">
                 </span> 
               </div>
-              <div class="vote">vote: <span class="called-details">{{ film.vote_average }}</span> </div>
+              <div class="vote">vote: 
+                <span class="called-details" v-html="voteToStar(film.vote_average)"></span> 
+              </div>
             </div>
             <!--details-->
             
