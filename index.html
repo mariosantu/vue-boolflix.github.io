@@ -42,7 +42,7 @@
           
             <!--copertina-->
             <div>
-              <img class="copertina" :src="`${getCover(film.backdrop_path)}`" alt="test">
+              <img class="copertina" :src="`${getCover(film.poster_path)}`" alt="test">
             </div>
             <!--copertina-->
 
@@ -73,7 +73,7 @@
 
             <!--copertina-->
             <div>
-              <img class="copertina" src="img/testimg.jpg" alt="test">
+              <img class="copertina" :src="`${getCover(series.poster_path)}`" alt="test">
             </div>
             <!--copertina-->
 

@@ -54,8 +54,8 @@ var app = new Vue({
 				return "img/default.png";
 			}
 		},
-		getCover(backdropPath) {
-			return this.pathCoverImg + backdropPath;
+		getCover(posterPath) {
+			return this.pathCoverImg + posterPath;
 		}
 
 	},
