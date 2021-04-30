@@ -17,7 +17,9 @@
   <div id="root">
 
     <header>
+      <!--logo-->
       <div class="logo"> Boolfix </div>
+      <!--logo-->
 
       <!--filter-->
       <div>
@@ -30,44 +32,69 @@
 
     <main>
 
-      <div v-if="filmsArray.length > 0" class="test">Film</div>
+        <!--film title-->
+        <div v-if="filmsArray.length > 0" class="title_section">Film</div>
+        <!--film title-->
+          
+        <!--film section-->
+        <div class="container">
+          <div v-for="film in filmsArray" class="films">  
+          
+            <!--copertina-->
+            <div>
+              <img class="copertina" :src="`${getCover(film.backdrop_path)}`" alt="test">
+            </div>
+            <!--copertina-->
 
-      <div class="container">
-        <!--film-->
-        <div v-for="film in filmsArray" class="films">  
-          <div class="title">Titolo: <span class="answers">{{ film.title }}</span>  </div>
-          <div class="original-title">Titolo originale: <span class="answers">{{ film.original_title }}</span> </div>
-          <div class="lang">Language: 
-            <span class="answers">
-              <img class="lang-img" :src="`${flagCheck(film.original_language)}`" alt="flag">
-            </span> 
-          </div>
-          <div class="vote">vote: <span class="answers">{{ film.vote_average }}</span> </div>
+            <!--details-->
+            <div class="details">
+              <div class="title">Titolo: <span class="called-details">{{ film.title }}</span>  </div>
+              <div class="original-title">Titolo originale: <span class="called-details">{{ film.original_title }}</span> </div>
+              <div class="lang">Language: 
+                <span class="called-details">
+                  <img class="lang-img" :src="`${flagCheck(film.original_language)}`" alt="flag">
+                </span> 
+              </div>
+              <div class="vote">vote: <span class="called-details">{{ film.vote_average }}</span> </div>
+            </div>
+            <!--details-->
+            
+          </div>   
         </div>
-        <!--film-->
-      </div>
-        
-      <div v-if="seriesArray.length > 0" class="test">SERIES</div>
+        <!--film section-->
 
-      <div class="container">
-           <!--series -->
-         <div v-for="series in seriesArray" class="films">  
-          <div class="title">Titolo: <span class="answers">{{ series.name }}</span>  </div>
-          <div class="original-title">Titolo originale: <span class="answers">{{ series.original_name }}</span> </div>
-          <div class="lang">Language: 
-            <span class="answers">
-              <img class="lang-img" :src="`${flagCheck(series.original_language)}`" alt="flag">
-            </span> 
+        <!--series title-->
+        <div v-if="seriesArray.length > 0" class="title_section">SERIES</div>
+        <!--series title-->
+
+        <!--series section-->
+        <div class="container">
+          <div v-for="series in seriesArray" class="films"> 
+
+            <!--copertina-->
+            <div>
+              <img class="copertina" src="img/testimg.jpg" alt="test">
+            </div>
+            <!--copertina-->
+
+            <!--details-->
+            <div class="details">
+              <div class="title">Titolo: <span class="called-details">{{ series.name }}</span>  </div>
+            <div class="original-title">Titolo originale: <span class="called-details">{{ series.original_name }}</span> </div>
+            <div class="lang">Language: 
+              <span class="called-details">
+                <img class="lang-img" :src="`${flagCheck(series.original_language)}`" alt="flag">
+              </span> 
+            </div>
+            <div class="vote">vote: <span class="called-details">{{ series.vote_average }}</span> </div>
           </div>
-          <div class="vote">vote: <span class="answers">{{ series.vote_average }}</span> </div>
+            </div>
+          <!--details-->
+
         </div>
-        <!--series -->
-      </div>
-
-
+        <!--series section-->
 
     </main>
-
   </div>
   
 

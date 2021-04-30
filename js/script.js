@@ -3,6 +3,7 @@ var app = new Vue({
 	el: '#root',
 	data: {
 		userInput: '',
+		pathCoverImg: 'https://image.tmdb.org/t/p/w342',
 		filmsArray: [],
 		seriesArray: [],
 		langFlagsArray: ['it','en','de','ja','fr','es','kr','us'],
@@ -44,15 +45,19 @@ var app = new Vue({
 		flagCheck(langFlag) {
 
 			if(this.langFlagsArray.includes(langFlag)) {
-				// se la bandiera è prwsente ritorno
+				// se la bandiera è presente ritorno
 				// l'immagine corrispettiva 
 				return "img/" + langFlag + ".svg";
 			} else {
 				// altrimenti ritorno un 'immagine 
-				// di default
+				// di default ove mancasse la bandiera
 				return "img/default.png";
 			}
+		},
+		getCover(backdropPath) {
+			return this.pathCoverImg + backdropPath;
 		}
+
 	},
 	mounted() {
         // mostra di default i film più popolari

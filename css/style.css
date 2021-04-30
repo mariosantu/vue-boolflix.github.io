@@ -1,4 +1,4 @@
-/*  RESET */
+/*--RESET--*/
 
 * {
     margin: 0;
@@ -10,11 +10,19 @@ img {
     width: 100%;
   }
 
+/*--RESET END--*/
+
+/*--COMMON--*/
+
 body {
   background-color: black;
   font-family: 'Roboto', sans-serif;
 }
-  
+
+/*--COMMON END--*/
+
+/*--HEADER--*/
+
 header {
   background-color: rgb(36, 36, 36);
   padding: 10px;
@@ -29,20 +37,35 @@ header {
   color: red;
 }
 
+/*--HEADER END--*/
+
+/*--MAIN--*/
+
+/*--structure--*/
+
+main {
+  min-width: 1400px;
+}
+
 .container {
-  padding: 60px 0;
+  padding: 45px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .films {
-  width: calc( ( 100% / 6 ) - 80px );
+  min-width: 200px;
+  width: calc( ( 100% / 4 ) - 80px );
   background-color: rgb(36, 36, 36);
   padding: 20px;
   margin: 0 20px;
   margin-bottom: 20px;
 }
+
+/*--structure--*/
+
+/*--details start--*/
 
 .lang,
 .vote,
@@ -53,20 +76,43 @@ header {
   color: white;
 }
 
-.answers {
+.called-details {
   color: gray;
- font-size: 20px;
- font-weight: lighter;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.test {
+.title_section {
   font-weight: bold;
   color: white;
   text-align: center;
   font-size: 45px;
+  padding-top: 50px;
 }
 
 .lang-img {
   height: 13px;
   width: auto;
 }
+
+/*--details end--*/
+
+/*--show/hide section--*/
+.copertina {
+  display: block;
+}
+
+.details {
+  display: none;
+}
+
+.films:hover .copertina {
+  display: none;
+}
+
+.films:hover .details {
+  display: block;
+}
+/*--show/hide section end--*/
+
+/*--MAIN END--*/
