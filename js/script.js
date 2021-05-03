@@ -60,7 +60,7 @@ var app = new Vue({
 		getCover(posterPath) {
 
 			if( posterPath == null) {
-				return "img/default.png";
+				return "img/blank.png";
 			} else {
 				return this.pathCoverImg + posterPath;
 			}	
