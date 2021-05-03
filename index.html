@@ -54,13 +54,20 @@
 
             <!--details-->
             <ul class="details">
-              <li class="title">Titolo: <span class="called-details">{{ film.title }}</span>  </li>
-              <li class="original-title">Titolo originale: <span class="called-details">{{ film.original_title }}</span> </li>
+              <li class="title">Titolo: 
+                <span class="called-details">{{ film.title }}</span>  
+              </li>
+
+              <li class="original-title">Titolo originale: 
+                <span class="called-details">{{ film.original_title }}</span> 
+              </li>
+
               <li class="lang">Language: 
                 <span class="called-details">
                   <img class="lang-img" :src="`${flagCheck(film.original_language)}`" alt="flag">
                 </span> 
               </li>
+
               <li class="vote">vote: 
                 <span class="called-details" v-html="voteToStar(film.vote_average)"></span> 
               </li>
@@ -88,16 +95,25 @@
             <!--copertina-->
 
             <!--details-->
-            <div class="details">
-              <div class="title">Titolo: <span class="called-details">{{ series.name }}</span>  </div>
-            <div class="original-title">Titolo originale: <span class="called-details">{{ series.original_name }}</span> </div>
-            <div class="lang">Language: 
+            <ul class="details">
+              <li class="title">Titolo: 
+                <span class="called-details">{{ series.name }}</span>  
+              </li>
+
+            <li class="original-title">Titolo originale: 
+              <span class="called-details">{{ series.original_name }}</span> 
+            </li>
+
+            <li class="lang">Language: 
               <span class="called-details">
                 <img class="lang-img" :src="`${flagCheck(series.original_language)}`" alt="flag">
               </span> 
-            </div>
-            <div class="vote">vote: <span class="called-details">{{ series.vote_average }}</span> </div>
-          </div>
+            </li>
+
+            <li class="vote">vote: 
+              <span class="called-details">{{ series.vote_average }}</span> 
+            </li>
+          </ul>
             </div>
           <!--details-->
 
