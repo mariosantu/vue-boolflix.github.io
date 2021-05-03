@@ -18,13 +18,17 @@
 
     <header>
       <!--logo-->
-      <div class="logo"> Boolfix </div>
+      <div class="logo">
+        <img src="img/logo.png" alt="logo">
+      </div>
       <!--logo-->
 
       <!--filter-->
-      <div>
-        <input v-model="userInput" @keyup.enter="search()" type="text">
-        <button @click="search()">Search</button>
+      <div class="filter-container">
+        <input v-model="userInput" @keyup.enter="search()" type="text" placeholder="Search here...">
+        <button @click="search()">
+          <i class="fas fa-search"></i>
+        </button>
       </div>
       <!--filter-->
 
@@ -33,7 +37,9 @@
     <main>
 
         <!--film title-->
-        <div v-if="filmsArray.length > 0" class="title_section">Film</div>
+        <div v-if="filmsArray.length > 0" class="title_section">
+          <img src="img/film.png" alt="film">
+        </div>
         <!--film title-->
           
         <!--film section-->
@@ -47,18 +53,18 @@
             <!--copertina-->
 
             <!--details-->
-            <div class="details">
-              <div class="title">Titolo: <span class="called-details">{{ film.title }}</span>  </div>
-              <div class="original-title">Titolo originale: <span class="called-details">{{ film.original_title }}</span> </div>
-              <div class="lang">Language: 
+            <ul class="details">
+              <li class="title">Titolo: <span class="called-details">{{ film.title }}</span>  </li>
+              <li class="original-title">Titolo originale: <span class="called-details">{{ film.original_title }}</span> </li>
+              <li class="lang">Language: 
                 <span class="called-details">
                   <img class="lang-img" :src="`${flagCheck(film.original_language)}`" alt="flag">
                 </span> 
-              </div>
-              <div class="vote">vote: 
+              </li>
+              <li class="vote">vote: 
                 <span class="called-details" v-html="voteToStar(film.vote_average)"></span> 
-              </div>
-            </div>
+              </li>
+            </ul>
             <!--details-->
             
           </div>   
@@ -66,7 +72,9 @@
         <!--film section-->
 
         <!--series title-->
-        <div v-if="seriesArray.length > 0" class="title_section">SERIES</div>
+        <div v-if="seriesArray.length > 0" class="title_section">
+          <img src="img/series.png" alt="series">
+        </div>
         <!--series title-->
 
         <!--series section-->

@@ -24,17 +24,44 @@ body {
 /*--HEADER--*/
 
 header {
-  background-color: rgb(36, 36, 36);
+  background-color: rgba(36, 36, 36,0.3);
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  position: fixed;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: xx-large;
-  color: red;
+.logo img,
+.title_section img {
+  height: 50px;
+  width: auto;
+}
+
+.filter-container{
+  display: flex;
+}
+
+
+input {
+  outline: none;
+  border: none;
+  background-color: rgb(156, 152, 152);
+  border-radius: 15px 0px 0px 5px;
+  padding: 15px;
+}
+
+button {
+  background-color: rgb(156, 152, 152);
+  border-radius: 0px 10px 8px 0px;
+  border: none;
+  font-size: 17px;
+  padding: 4px;
+}
+
+button i {
+  cursor: pointer;
 }
 
 /*--HEADER END--*/
@@ -56,11 +83,12 @@ main {
 
 .films {
   min-width: 200px;
-  width: calc( ( 100% / 4 ) - 80px );
+  width: calc( ( 100% / 5 ) - 80px );
   background-color: rgb(36, 36, 36);
-  padding: 20px;
+  padding: 6px;
   margin: 0 20px;
   margin-bottom: 20px;
+  border-radius: 10px;
 }
 
 /*--structure--*/
@@ -71,6 +99,7 @@ main {
 .vote,
 .title,
 .original-title {
+  padding: 10px;
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -88,6 +117,7 @@ main {
   text-align: center;
   font-size: 45px;
   padding-top: 50px;
+  padding-top: 100px;
 }
 
 .lang-img {
@@ -104,6 +134,7 @@ main {
 
 .details {
   display: none;
+  list-style-type: none;
 }
 
 .films:hover .copertina {
