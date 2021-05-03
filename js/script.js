@@ -118,6 +118,9 @@ var app = new Vue({
 			// il richiamo della funzione a riga 59 tramite v-html 
 			// (file html)
 			return starsIcon;
+		},
+		getOverview(overview) {
+			return overview;
 		}
 	},
 	mounted() {
