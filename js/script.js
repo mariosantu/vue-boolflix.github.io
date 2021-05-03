@@ -119,8 +119,13 @@ var app = new Vue({
 			// (file html)
 			return starsIcon;
 		},
-		getOverview(overview) {
-			return overview;
+		cuttedOverview(myArray,indexOverview) {
+
+			let overviewToPrint;
+			let thisObj = myArray[indexOverview].overview;
+			overviewToPrint = thisObj.slice(0,100);
+			
+			return overviewToPrint+'...';
 		}
 	},
 	mounted() {

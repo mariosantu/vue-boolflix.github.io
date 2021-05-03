@@ -44,7 +44,7 @@
           
         <!--film section-->
         <div class="container">
-          <div v-for="film in filmsArray" class="films">  
+          <div v-for="(film, index) in filmsArray" class="films">  
           
             <!--copertina-->
             <div>
@@ -74,7 +74,7 @@
 
               <li class="overview">
                 Overview:
-                <span class="called-details">{{ getOverview(film.overview)}} </span>
+                <span class="called-details">{{ cuttedOverview(filmsArray,index) }} </span>
               </li>
             </ul>
             <!--details-->
@@ -91,7 +91,7 @@
 
         <!--series section-->
         <div class="container">
-          <div v-for="series in seriesArray" class="films"> 
+          <div v-for="(series, index) in seriesArray" class="films"> 
 
             <!--copertina-->
             <div>
@@ -118,6 +118,12 @@
             <li class="vote">Vote: 
               <span class="called-details">{{ series.vote_average }}</span> 
             </li>
+
+            <li class="overview">
+              Overview:
+              <span class="called-details">{{ cuttedOverview(seriesArray,index) }} </span>
+            </li>
+            
           </ul>
             </div>
           <!--details-->
